@@ -1,4 +1,6 @@
 import type { MedusaRequest, MedusaResponse } from "@medusajs/framework/http";
+import { MedusaError } from "@medusajs/framework/utils"
+
 import myWorkflow from "../../../../workflows/convert"
 
 import { isValidCurrency } from "../../../../utils/isValidCurrency";
@@ -10,6 +12,27 @@ export interface QueryFields {
 
 export async function GET(req: MedusaRequest, res: MedusaResponse) {
   
+  if (!req.query.amount) {
+    throw new MedusaError(
+      MedusaError.Types.INVALID_DATA,
+      "The `amount` query parameter is required."
+    )
+  }
+
+  if (!req.query.from) {
+    throw new MedusaError(
+      MedusaError.Types.INVALID_DATA,
+      "The `from` query parameter is required."
+    )
+  }
+
+  if (!req.query.to) {
+    throw new MedusaError(
+      MedusaError.Types.INVALID_DATA,
+      "The `to` query parameter is required."
+    )
+  }
+
   const { amount, from: fromCountryCode, to: toCountryCode } = req.query as QueryFields;
 
   // TODO: fetch GET https://v6.exchangerate-api.com/v6/YOUR-API-KEY/codes and put into isValidCurrency
