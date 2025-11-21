@@ -1,9 +1,13 @@
 
 # Init project
 npm i // install dependencies
+
 npm run docker:up // run docker
+
 docker compose logs -f // to see logs
+
 npm run docker:down // stop docker
+
 
 <!-- {your_publishable_api_key} -->
 
