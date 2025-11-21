@@ -2,7 +2,6 @@ import type { MedusaRequest, MedusaResponse } from "@medusajs/framework/http";
 import myWorkflow from "../../../../workflows/convert"
 
 import { isValidCurrency } from "../../../../utils/isValidCurrency";
-
 export interface QueryFields {
   amount?: string;
   from?: string;

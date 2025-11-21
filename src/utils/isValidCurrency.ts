@@ -6,3 +6,4 @@ const validCurrencies = [
 export function isValidCurrency(name: string) {
     return validCurrencies.includes(name.toUpperCase());
 }
+

@@ -2,9 +2,6 @@ import { Modules } from "@medusajs/framework/utils"
 import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
 import Decimal from "decimal.js"
 
-
-
-
 interface ExternalApiStepInput {
     // Define any input parameters if necessary, e.g., filters
     amount: string;

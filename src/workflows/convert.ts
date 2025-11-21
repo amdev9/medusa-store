@@ -4,7 +4,6 @@ import {
 } from "@medusajs/framework/workflows-sdk"
 import { externalApiStep } from "./externalApiRedisStep"
 
-
 interface IConvertWorkflowInput {
   // Define any input parameters if necessary, e.g., filters
   amount: string;
