@@ -36,6 +36,12 @@ curl 'http://localhost:9000/store/currency/convert?amount=10a&from=USD&to=EUR' \
 -H 'x-publishable-api-key: pk_e5ac14e5fb0ee1b9f0af8d1cd2ffed632aece2243e5cb6c7d876d6860c7b097b'
 {"message":"Initial amount not defined or not valid"}
 
+# External api not accessible - for example no network
+curl 'http://localhost:9000/store/currency/convert?amount=100&from=GBP&to=USD' \
+-H 'x-publishable-api-key: pk_e5ac14e5fb0ee1b9f0af8d1cd2ffed632aece2243e5cb6c7d876d6860c7b097b'
+{"message":"Something unexpected happened. Please try again."}
+
+
 
 Old git history (пришлось реинициализировать гит всвязи с ошибкой)
 ![Old git history ](oldgit.png) 
