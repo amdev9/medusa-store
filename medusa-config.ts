@@ -15,7 +15,7 @@ module.exports = defineConfig({
             is_default: true,
             options: {
               redisUrl: process.env.REDIS_URL,
-              // more options...
+              ttl: 3600,
             },
           },
         ],
@@ -36,5 +36,5 @@ module.exports = defineConfig({
       cookieSecret: process.env.COOKIE_SECRET || "supersecret",
     }
   }
-  
+
 })

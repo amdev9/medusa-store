@@ -10,11 +10,11 @@ interface ExternalApiStepInput {
 }
 
 function calculateTotalRes(amount: string, data: any): string {
-    console.log("data", data)
+    // console.log("data", data)
     const price = new Decimal(amount);
-    const conversion_rate = new Decimal(data.conversion_rate); // JSON.parse(
+    const conversion_rate = new Decimal(data.conversion_rate);
 
-    console.log("conversion_rate", conversion_rate)
+    // console.log("conversion_rate", conversion_rate)
     const total = price.times(conversion_rate);
     const totalRes = total.toFixed(2)
     return totalRes;

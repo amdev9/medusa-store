@@ -10,11 +10,7 @@ export interface QueryFields {
 
 export async function GET(req: MedusaRequest, res: MedusaResponse) {
   // console.log(req.query)
-  const { amount, from: fromCountryCode, to: toCountryCode } = req.query as {
-    amount?: string;
-    from?: string;
-    to?: string;
-  };
+  const { amount, from: fromCountryCode, to: toCountryCode } = req.query as QueryFields;
 
   // console.log("test -- ", amount, fromCountryCode, toCountryCode);
 
