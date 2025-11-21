@@ -6,6 +6,7 @@ interface GetCurrenciesStepInput {
   codes?: string[];
 }
 
+// TODO: implement instead isValidCurrency
 export const getCurrenciesStep = createStep(
   "get-currencies-step",
   async (input: GetCurrenciesStepInput, { container }) => {
