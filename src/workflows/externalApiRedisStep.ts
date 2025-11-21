@@ -26,11 +26,10 @@ export const externalApiStep = createStep(
             return new StepResponse(totalRes)
         }
 
-        // console.log(process.env.EXTERNAL_API_KEY)
         const externalFetchURL = `${EXTERNAL_URL}${process.env.EXTERNAL_API_KEY}/pair/${input.from}/${input.to}`
-        // console.log("fetchString", fetchString);
+
         const result = await fetch(externalFetchURL);
-        // console.log("result", result)
+
         if (result.ok) {
             const externalResponseData: ExternalApiResponse = await result.json();
 

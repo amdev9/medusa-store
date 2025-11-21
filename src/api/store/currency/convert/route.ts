@@ -9,10 +9,8 @@ export interface QueryFields {
 };
 
 export async function GET(req: MedusaRequest, res: MedusaResponse) {
-  // console.log(req.query)
+  
   const { amount, from: fromCountryCode, to: toCountryCode } = req.query as QueryFields;
-
-  // console.log("test -- ", amount, fromCountryCode, toCountryCode);
 
   // TODO: fetch GET https://v6.exchangerate-api.com/v6/YOUR-API-KEY/codes and put into isValidCurrency
   if (!amount || isNaN(Number(amount))) {
