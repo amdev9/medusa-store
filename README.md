@@ -37,8 +37,5 @@ curl 'http://localhost:9000/store/currency/convert?amount=10a&from=USD&to=EUR' \
 {"message":"Initial amount not defined or not valid"}
 
 
-
-
-
-
-
+Old git history (пришлось реинициализировать гит всвязи с ошибкой)
+![alt text](http://url/to/img.png) 
