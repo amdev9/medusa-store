@@ -10,6 +10,7 @@ interface ExternalApiStepInput {
     to?: string;
 }
 
+const EXTERNAL_URL = "https://v6.exchangerate-api.com/v6/";
 
 export const externalApiStep = createStep(
     "external-api-step",
@@ -26,19 +27,19 @@ export const externalApiStep = createStep(
         }
 
         // console.log(process.env.EXTERNAL_API_KEY)
-        const fetchString = `https://v6.exchangerate-api.com/v6/${process.env.EXTERNAL_API_KEY}/pair/${input.from}/${input.to}`
+        const externalFetchURL = `${EXTERNAL_URL}${process.env.EXTERNAL_API_KEY}/pair/${input.from}/${input.to}`
         // console.log("fetchString", fetchString);
-        const result = await fetch(fetchString);
+        const result = await fetch(externalFetchURL);
         // console.log("result", result)
         if (result.ok) {
-            const data: ExternalApiResponse = await result.json();
+            const externalResponseData: ExternalApiResponse = await result.json();
 
             await cachingModuleService.set({
                 key: cacheKey,
-                data: data,
+                data: externalResponseData,
             })
 
-            const totalRes = calculateTotalRes(input.amount, data)
+            const totalRes = calculateTotalRes(input.amount, externalResponseData)
 
             return new StepResponse(totalRes)
         }

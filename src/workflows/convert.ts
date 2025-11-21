@@ -5,7 +5,6 @@ import {
 import { externalApiStep } from "./externalApiRedisStep"
 
 interface IConvertWorkflowInput {
-  // Define any input parameters if necessary, e.g., filters
   amount: string;
   from?: string;
   to?: string;
