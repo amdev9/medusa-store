@@ -1,6 +1,7 @@
 
 # Init project
 
+```
 mv .env.template .env // for test purpose show some secrets (not the best practice)
 npm i // install dependencies
 
@@ -9,7 +10,7 @@ npm run docker:up // run docker
 docker compose logs -f // to see logs
 
 npm run docker:down // stop docker
-
+```
 
 Use your {your_publishable_api_key} from admin panel instead
 
