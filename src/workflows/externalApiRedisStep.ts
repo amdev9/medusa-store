@@ -1,20 +1,13 @@
 import { Modules } from "@medusajs/framework/utils"
 import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
 import { calculateTotalRes, ExternalApiResponse } from "../utils/calculateTotalRes";
-
-
-interface ExternalApiStepInput {
-    // Define any input parameters if necessary, e.g., filters
-    amount: string;
-    from?: string;
-    to?: string;
-}
+import { IConvertWorkflowInput } from "./convert";
 
 const EXTERNAL_URL = "https://v6.exchangerate-api.com/v6/";
 
 export const externalApiStep = createStep(
     "external-api-step",
-    async (input: ExternalApiStepInput, { container }) => {
+    async (input: IConvertWorkflowInput, { container }) => {
         const cachingModuleService = container.resolve(Modules.CACHING)
 
         const cacheKey = await cachingModuleService.computeKey({ from: input.from, to: input.to })

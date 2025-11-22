@@ -1,9 +1,9 @@
 import type { MedusaRequest, MedusaResponse } from "@medusajs/framework/http";
 import { MedusaError } from "@medusajs/framework/utils"
 
-import myWorkflow from "../../../../workflows/convert"
-
+import convertWorkflowInput from "../../../../workflows/convert"
 import { isValidCurrency } from "../../../../utils/isValidCurrency";
+
 export interface QueryFields {
   amount?: string;
   from?: string;
@@ -50,7 +50,7 @@ export async function GET(req: MedusaRequest, res: MedusaResponse) {
     return;
   }
 
-  const { result, errors } = await myWorkflow(req.scope)
+  const { result, errors } = await convertWorkflowInput(req.scope)
     .run({
       input: {
         amount: amount,

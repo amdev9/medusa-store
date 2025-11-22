@@ -4,13 +4,13 @@ import {
 } from "@medusajs/framework/workflows-sdk"
 import { externalApiStep } from "./externalApiRedisStep"
 
-interface IConvertWorkflowInput {
+export interface IConvertWorkflowInput {
   amount: string;
-  from?: string;
-  to?: string;
+  from: string;
+  to: string;
 }
 
-const myWorkflow = createWorkflow(
+const convertWorkflowInput = createWorkflow(
   "convert",
   function (input: IConvertWorkflowInput) {
     // const str2 = getCurrenciesStep() 
@@ -22,4 +22,4 @@ const myWorkflow = createWorkflow(
   }
 )
 
-export default myWorkflow
+export default convertWorkflowInput
