@@ -1,6 +1,9 @@
 
-# Init project
+# Medusajs project
+Добавить API endpoint в MedusaJS v2 проект для конвертации валют с использованием внешнего API.
 
+
+Инструкция по запуску
 ```
 mv .env.template .env // for test purpose show some secrets (not the best practice)
 npm i // install dependencies
