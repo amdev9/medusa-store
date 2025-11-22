@@ -11,7 +11,7 @@ export interface QueryFields {
 };
 
 export async function GET(req: MedusaRequest, res: MedusaResponse) {
-  
+
   if (!req.query.amount) {
     throw new MedusaError(
       MedusaError.Types.INVALID_DATA,
@@ -62,7 +62,7 @@ export async function GET(req: MedusaRequest, res: MedusaResponse) {
 
   if (errors.length) {
     return res.send({
-      message: "Something unexpected happened. Please try again.",
+      message: "Something unexpected with convert workflow happened.",
     })
   }
 
