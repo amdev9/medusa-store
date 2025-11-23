@@ -20,7 +20,7 @@ export const externalApiStep = createStep(
         }
 
         const externalFetchURL = `${EXTERNAL_URL}${process.env.EXTERNAL_API_KEY}/pair/${input.from}/${input.to}`
-
+        // TODO: wrap into try catch and throw error
         const result = await fetch(externalFetchURL);
 
         if (result.ok) {
