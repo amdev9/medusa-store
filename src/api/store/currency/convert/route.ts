@@ -62,7 +62,9 @@ export async function GET(req: MedusaRequest, res: MedusaResponse) {
 
   if (errors.length) {
     return res.send({
-      message: "Something unexpected with convert workflow happened.",
+      message: `Convert workflow errors: ${errors.map((err) => {
+        return err.error.message
+      }).join(", ")}`,
     })
   }
 

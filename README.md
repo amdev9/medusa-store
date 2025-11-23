@@ -60,9 +60,9 @@ External api not accessible - for example no network
 ```
 curl 'http://localhost:9000/store/currency/convert?amount=100&from=GBP&to=USD' \
 -H 'x-publishable-api-key: {your_publishable_api_key}'
-{"message":"Something unexpected with convert workflow happened."}
+{"message":"Convert workflow errors: fetch failed"}
 ```
 
 
-Old git history (пришлось реинициализировать гит всвязи с ошибкой)
-![Old git history ](oldgit.png) 
+<!-- Old git history (пришлось реинициализировать гит всвязи с ошибкой)
+![Old git history ](oldgit.png)  -->
